@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "VsXml2Md/1.0.0": {
+        "dependencies": {
+          "EddieBreeg.CoreExtensions": "1.0.0"
+        },
+        "runtime": {
+          "VsXml2Md.dll": {}
+        }
+      },
+      "EddieBreeg.CoreExtensions/1.0.0": {
+        "runtime": {
+          "CoreExtensions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VsXml2Md/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EddieBreeg.CoreExtensions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

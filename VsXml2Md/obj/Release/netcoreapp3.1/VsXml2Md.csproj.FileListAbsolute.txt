@@ -1,0 +1,13 @@
+E:\Progra\C#\VsXml2Md\VsXml2Md\bin\Release\netcoreapp3.1\VsXml2Md.exe
+E:\Progra\C#\VsXml2Md\VsXml2Md\bin\Release\netcoreapp3.1\VsXml2Md.deps.json
+E:\Progra\C#\VsXml2Md\VsXml2Md\bin\Release\netcoreapp3.1\VsXml2Md.runtimeconfig.json
+E:\Progra\C#\VsXml2Md\VsXml2Md\bin\Release\netcoreapp3.1\VsXml2Md.runtimeconfig.dev.json
+E:\Progra\C#\VsXml2Md\VsXml2Md\bin\Release\netcoreapp3.1\VsXml2Md.dll
+E:\Progra\C#\VsXml2Md\VsXml2Md\bin\Release\netcoreapp3.1\VsXml2Md.pdb
+E:\Progra\C#\VsXml2Md\VsXml2Md\obj\Release\netcoreapp3.1\VsXml2Md.csprojAssemblyReference.cache
+E:\Progra\C#\VsXml2Md\VsXml2Md\obj\Release\netcoreapp3.1\VsXml2Md.AssemblyInfoInputs.cache
+E:\Progra\C#\VsXml2Md\VsXml2Md\obj\Release\netcoreapp3.1\VsXml2Md.AssemblyInfo.cs
+E:\Progra\C#\VsXml2Md\VsXml2Md\obj\Release\netcoreapp3.1\VsXml2Md.csproj.CoreCompileInputs.cache
+E:\Progra\C#\VsXml2Md\VsXml2Md\obj\Release\netcoreapp3.1\VsXml2Md.dll
+E:\Progra\C#\VsXml2Md\VsXml2Md\obj\Release\netcoreapp3.1\VsXml2Md.pdb
+E:\Progra\C#\VsXml2Md\VsXml2Md\obj\Release\netcoreapp3.1\VsXml2Md.genruntimeconfig.cache

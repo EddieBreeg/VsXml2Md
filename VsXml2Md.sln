@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VsXml2Md", "VsXml2Md\VsXml2Md.csproj", "{551B1B86-A8BE-41BD-AF79-4F0F2ED5811C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{6D18E701-38C7-45E0-B2ED-ADB8A1E35413}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "..\CoreExtension\Utils\Utils.csproj", "{1B7808A0-A4EC-47E2-913B-BBC76D7651F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{551B1B86-A8BE-41BD-AF79-4F0F2ED5811C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551B1B86-A8BE-41BD-AF79-4F0F2ED5811C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551B1B86-A8BE-41BD-AF79-4F0F2ED5811C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551B1B86-A8BE-41BD-AF79-4F0F2ED5811C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D18E701-38C7-45E0-B2ED-ADB8A1E35413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D18E701-38C7-45E0-B2ED-ADB8A1E35413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D18E701-38C7-45E0-B2ED-ADB8A1E35413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D18E701-38C7-45E0-B2ED-ADB8A1E35413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B7808A0-A4EC-47E2-913B-BBC76D7651F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B7808A0-A4EC-47E2-913B-BBC76D7651F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B7808A0-A4EC-47E2-913B-BBC76D7651F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B7808A0-A4EC-47E2-913B-BBC76D7651F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54BBE93B-FDCB-4A23-B6AE-5951C5D9D3E1}
+	EndGlobalSection
+EndGlobal
