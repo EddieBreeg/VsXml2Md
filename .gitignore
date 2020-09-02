@@ -1,5 +1,5 @@
-Dist/*
-Testing/
+Dist
+Testing
 .vs/
-Properties/*
+Properties
 obj
