@@ -1,5 +1,7 @@
 Dist
 Testing
-.vs/
+.vs
 Properties
 obj
+*.user
+*.sln
