@@ -13,7 +13,8 @@ namespace VsXml2Md
             var converter = new XmlConverter(doc);
             string md = converter.Convert();
             File.WriteAllText(
-                Path.Join(Path.GetDirectoryName(args[0]), "Doc.md"),
+                Path.Join(Path.GetDirectoryName(args[0]), 
+                $"{Path.GetFileNameWithoutExtension(args[0])}.md"),
                 md);
         }
     }
@@ -23,14 +24,14 @@ namespace VsXml2Md
         public readonly Dictionary<string, string> Templates = new Dictionary<string, string>()
         {
             {"name", "### {0}" },
-            {"summary", "{0}\n" },
-            { "param", "- {0}: {1}\n"},
+            {"summary", "{0}" },
+            { "param", "- {0}: {1}"},
             { "typeparam", "- Type parameter {0}: {1} " },
-            {"returns", "Returns: {0}\n" },
-            { "remarks", "Remarks: {0}\n" },
-            { "code", "```csharp\n{0}\n```\n" },
-            { "c", "`{0}`\n" },
-            { "example", "Example:\n{0}\n" }
+            {"returns", "Returns: {0}" },
+            { "remarks", "Remarks: {0}" },
+            { "code", "```csharp\n{0}\n```" },
+            { "c", "`{0}`" },
+            { "example", "Example:\n{0}" }
         };
         public readonly Dictionary<char, string> MemberTypes = new Dictionary<char, string>()
         {
@@ -40,8 +41,7 @@ namespace VsXml2Md
         public XmlConverter(XmlDocument doc) => Doc = doc;
         public string Convert()
         {
-            var assemblyName = Doc.GetElementsByTagName("name")[0].InnerText;
-            string result = $"# {assemblyName}\n\n## Features List\n";
+            string result = $"## Features List\n";
             var members = Doc.GetElementsByTagName("member");
             result += FeaturesList(members) + "\n## Doc\n\n";
             foreach (XmlNode member in members)
@@ -75,7 +75,7 @@ namespace VsXml2Md
             var result = type != "class" ? "#" : "";
             foreach(XmlNode node in member.ChildNodes)
             {
-                var attr = node.Attributes.Count != 0 ? node.Attributes[0].Value : null;
+                var attr = node.Attributes != null && node.Attributes.Count > 0 ? node.Attributes[0].Value : null;
                 string line;
                 if(Templates.ContainsKey(node.Name))
                 {
@@ -83,7 +83,7 @@ namespace VsXml2Md
                         line = string.Format(Templates[node.Name], attr, node.InnerText);
                     else
                         line = string.Format(Templates[node.Name], node.InnerText);
-                    result += line.TrimStart() + "\n";
+                    result += line.TrimStart().TrimEnd() + "\n\n";
                 }
                 else
                 {
