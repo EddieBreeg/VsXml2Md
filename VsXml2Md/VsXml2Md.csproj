@@ -1,13 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <ApplicationIcon></ApplicationIcon>
+    <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\CoreExtension\Utils\Utils.csproj" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>../bin/</OutputPath>
+  </PropertyGroup>
 
 </Project>

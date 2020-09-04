@@ -23,15 +23,15 @@ namespace VsXml2Md
         public XmlDocument Doc { get; }
         public readonly Dictionary<string, string> Templates = new Dictionary<string, string>()
         {
-            {"name", "### {0}" },
-            {"summary", "{0}" },
-            { "param", "- {0}: {1}"},
-            { "typeparam", "- Type parameter {0}: {1} " },
-            {"returns", "Returns: {0}" },
-            { "remarks", "Remarks: {0}" },
-            { "code", "```csharp\n{0}\n```" },
+            {"name", "\r\n### *{0}*\r\n" },
+            {"summary", "{0}\r\n\r\n" },
+            { "param", "- {0}: {1}\r\n\r\n"},
+            { "typeparam", "- Type parameter {0}: {1}\r\n" },
+            { "returns", "\r\nReturns: {0}\r\n" },
+            { "remarks", "\r\nRemarks: {0}\r\n" },
+            { "code", "```csharp\r\n{0}\r\n```\r\n" },
             { "c", "`{0}`" },
-            { "example", "Example:\n{0}" }
+            { "example", "Example:\r\n{0}\r\n" }
         };
         public readonly Dictionary<char, string> MemberTypes = new Dictionary<char, string>()
         {
@@ -41,9 +41,9 @@ namespace VsXml2Md
         public XmlConverter(XmlDocument doc) => Doc = doc;
         public string Convert()
         {
-            string result = $"## Features List\n";
+            string result = $"## Features List\r\n";
             var members = Doc.GetElementsByTagName("member");
-            result += FeaturesList(members) + "\n## Doc\n\n";
+            result += FeaturesList(members) + "\r\n## Doc\r\n\r\n";
             foreach (XmlNode member in members)
                 result += RenderMember(member);
             
@@ -62,17 +62,17 @@ namespace VsXml2Md
                 string listPrefix;
                 if (type == "class")
                 {
-                    listPrefix = $"\n{c}. "; c++;
+                    listPrefix = $"\r\n{c}. "; c++;
                 }
                 else listPrefix = "- ";
-                result += $"{listPrefix}[{longName.Substring(2)}](#{shortName.ToLower().Replace(' ', '-')})\n";
+                result += $"{listPrefix}[{longName.Substring(2)}](#{shortName.ToLower().Replace(' ', '-')})\r\n";
             }
             return result;
         }
         public string RenderMember(XmlNode member)
         {
             var type = MemberTypes[member.Attributes.GetNamedItem("name").InnerText[0]];
-            var result = type != "class" ? "#" : "";
+            var result = "";
             foreach(XmlNode node in member.ChildNodes)
             {
                 var attr = node.Attributes != null && node.Attributes.Count > 0 ? node.Attributes[0].Value : null;
@@ -80,14 +80,14 @@ namespace VsXml2Md
                 if(Templates.ContainsKey(node.Name))
                 {
                     if (attr != null)
-                        line = string.Format(Templates[node.Name], attr, node.InnerText);
+                        line = string.Format(Templates[node.Name], attr, node.InnerText.TrimStart().TrimEnd());
                     else
-                        line = string.Format(Templates[node.Name], node.InnerText);
-                    result += line.TrimStart().TrimEnd() + "\n\n";
+                        line = string.Format(Templates[node.Name], node.InnerText.TrimStart().TrimEnd());
+                    result += line;
                 }
                 else
                 {
-                    line = node.InnerText.TrimStart() + '\n';
+                    line = node.InnerText.TrimStart() + "\r\n";
                 }
             }
             return result;
